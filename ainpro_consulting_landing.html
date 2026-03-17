@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:1 AI 브랜딩 설계 컨설팅 | EinPro 마니아</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coral: #FF6B35;
+  --coral-light: #FFF0EA;
+  --coral-dark: #CC4A18;
+  --gold: #FFD93D;
+  --gold-light: #FFFAE6;
+  --dark: #0C0C0C;
+  --dark2: #1A1A1A;
+  --dark3: #2A2A2A;
+  --gray: #888;
+  --light-gray: #F5F5F5;
+  --white: #FFFFFF;
+  --text: #222;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 140%;
+  background: radial-gradient(ellipse, rgba(255,107,53,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(255,217,61,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,53,0.15);
+  border: 1px solid rgba(255,107,53,0.4);
+  border-radius: 2px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--coral);
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.hero-question {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  word-break: keep-all;
+}
+
+.hero-question em {
+  color: var(--coral);
+  font-style: normal;
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2.5vw, 20px);
+  color: #999;
+  margin-bottom: 48px;
+  word-break: keep-all;
+}
+
+/* 마니아 한 줄 스토리 */
+.hero-story {
+  border-left: 3px solid var(--coral);
+  padding: 16px 20px;
+  background: rgba(255,107,53,0.06);
+  margin-bottom: 40px;
+  border-radius: 0 6px 6px 0;
+}
+
+.hero-story p {
+  font-size: 15px;
+  color: #bbb;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.hero-story strong {
+  color: var(--coral);
+}
+
+/* 히어로 CTA */
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--coral);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 18px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  word-break: keep-all;
+}
+
+.btn-primary:hover { background: var(--coral-dark); transform: translateY(-1px); }
+
+.hero-price-hint {
+  font-size: 13px;
+  color: #666;
+}
+
+.hero-price-hint strong {
+  color: var(--gold);
+}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #444;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── SECTIONS COMMON ── */
+section { padding: 80px 24px; }
+
+.section-inner { max-width: 720px; margin: 0 auto; }
+
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--coral);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--coral);
+}
+
+.section-title {
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.4;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+.section-title em { color: var(--coral); font-style: normal; }
+
+.section-desc {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 48px;
+  word-break: keep-all;
+  line-height: 1.9;
+}
+
+/* ── WHY SNS ── */
+.why-section { background: var(--dark2); }
+.why-section .section-title { color: var(--white); }
+.why-section .section-tag { }
+.why-section .section-desc { color: #999; }
+
+.scenario-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.scenario-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid rgba(255,107,53,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sc-situation {
+  background: var(--coral);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-situation p {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.sc-action {
+  background: rgba(255,255,255,0.04);
+  padding: 20px 16px;
+  border-right: 1px solid rgba(255,107,53,0.15);
+}
+
+.sc-result {
+  background: rgba(255,107,53,0.06);
+  padding: 20px 16px;
+}
+
+.sc-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.sc-action .sc-label { color: #888; }
+.sc-result .sc-label { color: var(--coral); }
+
+.sc-text {
+  font-size: 13px;
+  color: #ccc;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.sc-result .sc-text { color: var(--coral); font-weight: 500; }
+
+.formula-box {
+  background: var(--dark3);
+  border: 1px solid rgba(255,107,53,0.3);
+  border-radius: 12px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.formula {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 6vw, 52px);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.formula .f-ai { color: var(--coral); }
+.formula .f-op { color: #555; }
+.formula .f-sns { color: var(--gold); }
+.formula .f-eq { color: #555; }
+.formula .f-result { color: var(--white); }
+
+.formula-proof {
+  font-size: 14px;
+  color: #666;
+  margin-top: 16px;
+}
+
+.formula-proof strong { color: var(--coral); }
+
+/* ── FOR WHOM ── */
+.for-whom { background: var(--light-gray); }
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: border-color 0.2s;
+}
+
+.check-item:hover { border-color: var(--coral); }
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  background: var(--coral-light);
+  border: 2px solid var(--coral);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.check-icon::after {
+  content: '✓';
+  font-size: 11px;
+  color: var(--coral);
+  font-weight: 900;
+}
+
+.check-item p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* ── WHAT YOU GET ── */
+.includes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.include-item {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.include-item:hover {
+  border-color: var(--coral);
+  box-shadow: 0 4px 20px rgba(255,107,53,0.08);
+}
+
+.include-emoji {
+  font-size: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.include-content {}
+
+.include-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.include-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* ── PROCESS ── */
+.process-section { background: var(--dark); }
+.process-section .section-title { color: white; }
+.process-section .section-desc { color: #999; }
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--coral), transparent);
+}
+
+.process-step {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  position: relative;
+}
+
+.step-num {
+  width: 56px;
+  height: 56px;
+  background: var(--coral);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: white;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-content { padding-top: 12px; }
+
+.step-week {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--coral);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* ── RESULTS ── */
+.results-section { background: #FAFAFA; }
+
+.result-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.result-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--coral);
+}
+
+.result-before {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.result-arrow {
+  font-size: 18px;
+  margin: 8px 0;
+  color: var(--coral);
+}
+
+.result-after {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--coral);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* ── PRICING ── */
+.pricing-section { background: var(--dark2); }
+
+.price-card {
+  background: var(--dark3);
+  border: 1px solid rgba(255,107,53,0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.price-header {
+  background: var(--coral);
+  padding: 28px 32px;
+}
+
+.price-tag-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.price-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 4px;
+  word-break: keep-all;
+}
+
+.price-period {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+.price-body {
+  padding: 32px;
+}
+
+.price-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  color: white;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.price-amount span {
+  font-size: 24px;
+  color: #666;
+}
+
+.price-note {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 28px;
+}
+
+.price-includes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.price-include-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.pi-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--coral);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.price-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-dm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--coral);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.btn-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.slots-notice {
+  background: rgba(255,217,61,0.08);
+  border: 1px solid rgba(255,217,61,0.3);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--gold);
+  text-align: center;
+}
+
+/* ── FAQ ── */
+.faq-section { background: white; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faq-q {
+  padding: 20px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  word-break: keep-all;
+}
+
+.faq-q::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--coral);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.faq-a {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background: var(--dark);
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.final-formula {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 5vw, 42px);
+  letter-spacing: 0.05em;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.final-formula .fc { color: var(--coral); }
+.final-formula .fg { color: var(--gold); }
+
+.final-sub {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 48px;
+  word-break: keep-all;
+}
+
+.final-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark2);
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+footer p {
+  font-size: 13px;
+  color: #444;
+}
+
+footer strong { color: var(--coral); }
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .scenario-card { grid-template-columns: 1fr; }
+  .sc-action { border-right: none; border-bottom: 1px solid rgba(255,107,53,0.15); }
+  .result-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">ainpro · 1:1 컨설팅</div>
+
+    <h1 class="hero-question">
+      AI 배웠는데<br>
+      아직 <em>방향이 없다면</em>
+    </h1>
+    <p class="hero-sub">도구를 쌓는 게 아니라, 수익이 나는 구조를 설계해요</p>
+
+    <div class="hero-story">
+      <p>
+        평범한 주부였던 <strong>ainpro</strong>가 AI 콘텐츠로 SNS를 시작해<br>
+        <strong>팔로워 6만 명 + 대학 특강</strong>까지 왔어요.<br>
+        이 공식, 당신에게도 설계해드릴게요.
+      </p>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#pricing" class="btn-primary">
+        📩 컨설팅 신청하기
+      </a>
+      <p class="hero-price-hint">4주 과정 · <strong>₩490,000</strong> · 화상 미팅 2회 포함</p>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <span>↓</span>
+  </div>
+</section>
+
+
+<!-- WHY SNS -->
+<section class="why-section">
+  <div class="section-inner">
+    <div class="section-tag fade-up">왜 지금 SNS인가</div>
+    <h2 class="section-title fade-up" style="color:white;">사람들은 연락하기 전에<br><em>먼저 검색해요</em></h2>
+    <p class="section-desc fade-up">"그 강사, 믿을 만해?" "그 가게, 괜찮아?" "그 제품, 써도 돼?"<br>모두 SNS를 먼저 열어봅니다. 없으면 — 기회가 오지 않아요.</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card fade-up">
+        <div class="sc-situation"><p>강사·전문가<br>섭외할 때</p></div>
+        <div class="sc-action">
+          <div class="sc-label">👀 하는 행동</div>
+          <p class="sc-text">SNS 검색<br>콘텐츠·신뢰도 확인</p>
+        </div>
+        <div class="sc-result">
+          <div class="sc-label">💡 없으면?</div>
+          <p class="sc-text">'정보가 없네'<br>→ 다른 사람 섭외</p>
+        </div>
+      </div>
+      <div class="scenario-card fade-up">
+        <div class="sc-situation"><p>제품·서비스<br>구매할 때</p></div>
+        <div class="sc-action">
+          <div class="sc-label">👀 하는 행동</div>
+          <p class="sc-text">SNS 후기 검색<br>운영자 계정 확인</p>
+        </div>
+        <div class="sc-result">
+          <div class="sc-label">💡 없으면?</div>
+          <p class="sc-text">'계정이 없네'<br>→ 신뢰 안 가서 포기</p>
+        </div>
+      </div>
+      <div class="scenario-card fade-up">
+        <div class="sc-situation"><p>수강 결정<br>하기 전</p></div>
+        <div class="sc-action">
+          <div class="sc-label">👀 하는 행동</div>
+          <p class="sc-text">강사 SNS 확인<br>수강생 후기 탐색</p>
+        </div>
+        <div class="sc-result">
+          <div class="sc-label">💡 없으면?</div>
+          <p class="sc-text">'콘텐츠가 없네'<br>→ 다른 강사 선택</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="formula-box fade-up">
+      <div class="formula">
+        <span class="f-ai">AI</span>
+        <span class="f-op"> + </span>
+        <span class="f-sns">SNS</span>
+        <span class="f-eq"> = </span>
+        <span class="f-result">수익</span>
+      </div>
+      <p class="formula-proof">
+        이 공식을 직접 증명한 사람 —
+        <strong>평범한 주부 → 팔로워 6만 + 대학 특강</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOR WHOM -->
+<section class="for-whom">
+  <div class="section-inner">
+    <div class="section-tag fade-up">이런 분에게 맞아요</div>
+    <h2 class="section-title fade-up">혹시 이런 상황이세요?</h2>
+    <p class="section-desc fade-up">하나라도 해당된다면 지금 이 컨설팅이 필요해요.</p>
+
+    <div class="check-list">
+      <div class="check-item fade-up">
+        <div class="check-icon"></div>
+        <p>AI는 배웠는데 어디에 써야 할지, 뭘 해야 할지 모르겠어요</p>
+      </div>
+      <div class="check-item fade-up">
+        <div class="check-icon"></div>
+        <p>SNS 계정은 있는데 뭘 올려야 하는지, 어떤 플랫폼이 맞는지 모르겠어요</p>
+      </div>
+      <div class="check-item fade-up">
+        <div class="check-icon"></div>
+        <p>콘텐츠를 만드는데 반응이 없고, 지속하기가 어려워요</p>
+      </div>
+      <div class="check-item fade-up">
+        <div class="check-icon"></div>
+        <p>내 강점이 뭔지, 어떤 것으로 브랜딩해야 할지 모르겠어요</p>
+      </div>
+      <div class="check-item fade-up">
+        <div class="check-icon"></div>
+        <p>AI와 SNS로 수익을 내고 싶은데 어떻게 연결해야 할지 막막해요</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag fade-up">컨설팅 포함 내용</div>
+    <h2 class="section-title fade-up">4주 동안 <em>이것들</em>을 함께 해요</h2>
+
+    <div class="includes-grid">
+      <div class="include-item fade-up">
+        <div class="include-emoji">🎯</div>
+        <div class="include-content">
+          <div class="include-title">1:1 화상 미팅 2회 (회당 60분)</div>
+          <div class="include-desc">1회차: 강점 발굴 + 콘텐츠 방향 설계<br>2회차: 중간 점검 + 수익 구조 연결</div>
+        </div>
+      </div>
+      <div class="include-item fade-up">
+        <div class="include-emoji">📄</div>
+        <div class="include-content">
+          <div class="include-title">맞춤 전략 보고서 1부</div>
+          <div class="include-desc">당신만을 위한 SNS 브랜딩 전략 문서. 플랫폼·콘텐츠·도구·수익 구조까지 담겨요.</div>
+        </div>
+      </div>
+      <div class="include-item fade-up">
+        <div class="include-emoji">💬</div>
+        <div class="include-content">
+          <div class="include-title">카카오톡 채팅 4주 지원</div>
+          <div class="include-desc">궁금한 점, 막히는 부분을 바로 물어보세요. 4주 동안 채팅으로 함께해요.</div>
+        </div>
+      </div>
+      <div class="include-item fade-up">
+        <div class="include-emoji">👁️</div>
+        <div class="include-content">
+          <div class="include-title">콘텐츠 피드백</div>
+          <div class="include-desc">올리기 전 콘텐츠를 검토해드려요. 더 잘 반응받는 방향으로 다듬어줄게요.</div>
+        </div>
+      </div>
+      <div class="include-item fade-up">
+        <div class="include-emoji">⚙️</div>
+        <div class="include-content">
+          <div class="include-title">플랫폼 · AI 도구 세팅 도움</div>
+          <div class="include-desc">어떤 도구를 어떻게 세팅해야 할지 함께 정리해드려요. 처음이라도 괜찮아요.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="section-inner">
+    <div class="section-tag fade-up">진행 방식</div>
+    <h2 class="section-title fade-up">4주, 이렇게 진행돼요</h2>
+    <p class="section-desc fade-up">복잡하지 않아요. 단계별로 함께 가요.</p>
+
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-week">신청 후 · 사전 설문</div>
+          <div class="step-title">당신을 먼저 파악해요</div>
+          <div class="step-desc">현재 상황, 목표, AI 활용 수준을 파악하는 사전 설문지를 보내드려요. 이걸 기반으로 1회차 미팅을 준비해요.</div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-week">1~2주차 · 1회차 미팅</div>
+          <div class="step-title">강점 발굴 + 방향 설계</div>
+          <div class="step-desc">60분 화상 미팅으로 숨은 강점을 찾고, 어떤 플랫폼에서 어떤 콘텐츠를 해야 할지 함께 설계해요.</div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-week">2~3주차 · 실행 + 채팅 지원</div>
+          <div class="step-title">첫 콘텐츠 + 피드백</div>
+          <div class="step-desc">전략 보고서를 받고 직접 실행해요. 올리기 전 콘텐츠 피드백과 막히는 부분 채팅 지원을 받으면서요.</div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-week">4주차 · 2회차 미팅</div>
+          <div class="step-title">점검 + 수익 구조 연결</div>
+          <div class="step-desc">4주간의 결과를 점검하고, 앞으로 수익으로 연결하는 구조를 함께 설계해요.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="section-inner">
+    <div class="section-tag fade-up">수강생 성과</div>
+    <h2 class="section-title fade-up">함께한 분들의 <em>실제 변화예요</em></h2>
+    <p class="section-desc fade-up">모두 처음엔 방향을 몰랐던 분들이에요. 지금은 각자의 답을 찾았어요.</p>
+
+    <!-- 큰 성과 카드 2개 -->
+    <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:16px;">
+
+      <div class="fade-up" style="background:white; border:1px solid #eee; border-radius:12px; overflow:hidden;">
+        <div style="background:var(--coral); padding:14px 24px;">
+          <span style="font-size:11px; font-weight:700; letter-spacing:0.15em; color:rgba(255,255,255,0.8);">영상 강의 수강생</span>
+        </div>
+        <div style="padding:24px; display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center;">
+          <div>
+            <div style="font-size:12px; color:#aaa; margin-bottom:6px;">시작 전</div>
+            <div style="font-size:14px; color:#555; line-height:1.6; word-break:keep-all;">뭘 좋아하는지,<br>잘하는 것도<br>모르겠다는 분</div>
+          </div>
+          <div style="font-size:28px; color:var(--coral); font-weight:900;">→</div>
+          <div>
+            <div style="font-size:12px; color:var(--coral); font-weight:700; margin-bottom:6px;">변화 후 🎉</div>
+            <div style="font-size:22px; font-weight:900; color:var(--coral); line-height:1.3;">유튜브<br>구독자 13만</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up" style="background:white; border:1px solid #eee; border-radius:12px; overflow:hidden;">
+        <div style="background:var(--dark2); padding:14px 24px;">
+          <span style="font-size:11px; font-weight:700; letter-spacing:0.15em; color:rgba(255,255,255,0.6);">AI 입문 + 스레드 컨설팅</span>
+        </div>
+        <div style="padding:24px; display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center;">
+          <div>
+            <div style="font-size:12px; color:#aaa; margin-bottom:6px;">시작 전</div>
+            <div style="font-size:14px; color:#555; line-height:1.6; word-break:keep-all;">새로운 삶을<br>살고 싶었던<br>직장인</div>
+          </div>
+          <div style="font-size:28px; color:var(--coral); font-weight:900;">→</div>
+          <div>
+            <div style="font-size:12px; color:var(--coral); font-weight:700; margin-bottom:6px;">1달 만에 🎉</div>
+            <div style="font-size:20px; font-weight:900; color:var(--coral); line-height:1.3;">TV 방송<br>출연 제의</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 작은 성과 카드 4개 -->
+    <div class="result-cards">
+      <div class="result-card fade-up">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:var(--coral); margin-bottom:8px;">영상 강의 수강생</div>
+        <div class="result-before">좋아하는 것도 잘하는 것도 모르겠다는 분</div>
+        <div class="result-arrow">→</div>
+        <div class="result-after">인스타 팔로워<br><span style="font-size:12px; font-weight:400; color:#ff9f7a;">1달 만에</span> 4,000명 달성</div>
+      </div>
+      <div class="result-card fade-up">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:var(--coral); margin-bottom:8px;">영상 강의 수강생</div>
+        <div class="result-before">기존 미디어 강사 경력자</div>
+        <div class="result-arrow">→</div>
+        <div class="result-after">AI 영상 공모전 수상<br>+ AI 강의 오픈</div>
+      </div>
+      <div class="result-card fade-up">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:var(--coral); margin-bottom:8px;">영상 강의 수강생</div>
+        <div class="result-before">촬영이 어려웠던 뷰티샵</div>
+        <div class="result-arrow">→</div>
+        <div class="result-after">AI 영상으로<br>홍보 해결</div>
+      </div>
+      <div class="result-card fade-up">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; color:var(--coral); margin-bottom:8px;">블로그 + 스레드 컨설팅</div>
+        <div class="result-before">골프 전공 경력단절 주부</div>
+        <div class="result-arrow">→</div>
+        <div class="result-after">SNS로 레슨 고객<br>유입 · 현역 복귀</div>
+      </div>
+    </div>
+
+    <!-- 수료생 요약 -->
+    <div class="fade-up" style="background:var(--coral-light); border:1px solid rgba(255,107,53,0.2); border-radius:10px; padding:24px 28px; margin-top:8px; display:flex; gap:32px; flex-wrap:wrap; justify-content:center;">
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:42px; color:var(--coral); line-height:1;">500<span style="font-size:24px;">명+</span></div>
+        <div style="font-size:12px; color:#888; margin-top:4px;">누적 수강생</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:42px; color:var(--coral); line-height:1;">9<span style="font-size:24px;">기</span></div>
+        <div style="font-size:12px; color:#888; margin-top:4px;">주요 강의 운영</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--coral); line-height:1;">10<span style="font-size:20px;">회+</span></div>
+        <div style="font-size:12px; color:#888; margin-top:4px;">정규 강의 진행</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:42px; color:var(--coral); line-height:1;">6<span style="font-size:24px;">만</span></div>
+        <div style="font-size:12px; color:#888; margin-top:4px;">SNS 팔로워</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="section-tag fade-up">가격 안내</div>
+    <h2 class="section-title fade-up" style="color:white;">지금 신청하세요</h2>
+
+    <div class="price-card fade-up">
+      <div class="price-header">
+        <div class="price-tag-label">1:1 AI 브랜딩 설계 컨설팅</div>
+        <div class="price-title">당신의 강점을 찾아 AI + SNS 수익 구조를 설계해드려요</div>
+        <div class="price-period">4주 과정 · 화상 미팅 2회</div>
+      </div>
+      <div class="price-body">
+        <div class="price-amount"><span>₩</span>490,000</div>
+        <div class="price-note">부가세 별도 · 카카오페이 / 계좌이체 가능</div>
+        <div style="background:rgba(255,217,61,0.08); border:1px solid rgba(255,217,61,0.25); border-radius:6px; padding:10px 14px; font-size:13px; color:var(--gold); margin-bottom:20px;">
+          📌 현재 가격으로 운영 중이에요. 이후 가격은 올라갈 수 있어요.
+        </div>
+
+        <div class="price-includes">
+          <div class="price-include-item"><div class="pi-dot"></div><span>화상 미팅 2회 (회당 60분)</span></div>
+          <div class="price-include-item"><div class="pi-dot"></div><span>맞춤 전략 보고서 1부</span></div>
+          <div class="price-include-item"><div class="pi-dot"></div><span>카카오톡 채팅 4주 지원</span></div>
+          <div class="price-include-item"><div class="pi-dot"></div><span>콘텐츠 올리기 전 피드백</span></div>
+          <div class="price-include-item"><div class="pi-dot"></div><span>플랫폼 · AI 도구 세팅 도움</span></div>
+        </div>
+
+        <div class="price-cta">
+          <a href="https://open.kakao.com/o/sjeprbze" class="btn-dm" target="_blank">
+            💬 카카오톡으로 문의하기
+          </a>
+          <a href="https://instagram.com/promania_ai" class="btn-link" target="_blank">
+            📸 인스타 @promania_ai
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slots-notice fade-up">
+      ⚡ 현재 가격은 <strong style="color:var(--gold);">₩490,000</strong>이에요. 이후 가격은 올라갈 수 있어요.
+    </div>
+    <div class="fade-up" style="margin-top:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:14px 18px; font-size:13px; color:#666; text-align:center;">
+      지금 신청이 가장 좋은 조건이에요. 궁금한 것 있으면 카카오톡으로 먼저 물어보셔도 돼요.
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-tag fade-up">자주 묻는 질문</div>
+    <h2 class="section-title fade-up">궁금한 게 있으신가요?</h2>
+
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <div class="faq-q">AI를 전혀 모르는데 신청해도 될까요?</div>
+        <div class="faq-a">네, 괜찮아요. 오히려 처음 시작하는 분들이 방향을 제대로 잡고 출발할 수 있어서 더 효과적이에요. 어떤 도구부터 어떻게 시작할지 함께 설계해드려요.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">화상 미팅은 어떤 툴로 진행하나요?</div>
+        <div class="faq-a">줌(Zoom) 또는 카카오톡 페이스톡으로 진행해요. 편하신 방식으로 선택하시면 돼요.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">지방에 살아도 신청할 수 있나요?</div>
+        <div class="faq-a">물론이에요. 전국 어디서든 화상으로 진행하기 때문에 지역 제한이 없어요.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">전략 보고서는 언제 받을 수 있나요?</div>
+        <div class="faq-a">1회차 미팅 후 3~5일 이내에 전달해드려요. Word 문서로 제공되며 수정이 필요하면 1회 무료로 반영해드려요.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">4주 후에도 질문이 생기면요?</div>
+        <div class="faq-a">4주가 끝난 후에는 유료 추가 지원으로 이어갈 수 있어요. 단톡방(무료)에서는 계속 함께할 수 있고요.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">환불은 가능한가요?</div>
+        <div class="faq-a">미팅 시작 전에는 전액 환불 가능해요. 1회차 미팅 후에는 진행된 회차를 제외한 금액으로 환불해드려요.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-formula fade-up">
+    <span class="fc">AI</span> + <span class="fg">SNS</span> = 수익
+  </div>
+  <p class="final-sub fade-up">이 공식, 평범한 주부도 했어요.<br>당신도 할 수 있어요.</p>
+
+  <div class="final-btns">
+    <a href="https://open.kakao.com/o/sjeprbze" class="btn-primary fade-up" target="_blank" style="max-width:340px; width:100%;">
+      💬 카카오톡으로 지금 문의하기
+    </a>
+  </div>
+</section>
+
+
+<footer>
+  <p><strong>ainpro · EinPro</strong> · 선밖의 가능성</p>
+  <p style="margin-top:6px;">인스타 @promania_ai</p>
+</footer>
+
+
+<script>
+// 스크롤 애니메이션
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// 스크롤 시 히어로 힌트 숨기기
+window.addEventListener('scroll', () => {
+  const hint = document.querySelector('.scroll-hint');
+  if (hint) hint.style.opacity = window.scrollY > 100 ? '0' : '1';
+});
+</script>
+
+</body>
+</html>
